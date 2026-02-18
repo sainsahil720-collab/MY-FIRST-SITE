@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Business Booking</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="hero">
+        <p class="eyebrow">Quick Booking</p>
+        <h1>Book Your Visit</h1>
+        <p>
+          Reserve your preferred date and time in less than a minute. We will
+          confirm through WhatsApp.
+        </p>
+      </header>
+
+      <section class="card" aria-labelledby="booking-title">
+        <h2 id="booking-title">Booking Form</h2>
+        <form id="bookingForm" novalidate>
+          <label for="fullName">Full name</label>
+          <input id="fullName" name="fullName" type="text" autocomplete="name" required />
+
+          <label for="phone">Phone number</label>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            inputmode="tel"
+            autocomplete="tel"
+            placeholder="e.g. +1 555 123 4567"
+            required
+          />
+
+          <label for="email">Email (optional)</label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" />
+
+          <label for="service">Service</label>
+          <select id="service" name="service" required>
+            <option value="" selected disabled>Select a service</option>
+            <option>Haircut</option>
+            <option>Facial</option>
+            <option>Massage</option>
+            <option>Consultation</option>
+          </select>
+
+          <div class="date-time-grid">
+            <div>
+              <label for="bookingDate">Date</label>
+              <input id="bookingDate" name="bookingDate" type="date" required />
+            </div>
+            <div>
+              <label for="bookingTime">Time</label>
+              <input id="bookingTime" name="bookingTime" type="time" required />
+            </div>
+          </div>
+
+          <label for="notes">Notes (optional)</label>
+          <textarea id="notes" name="notes" rows="3" placeholder="Any extra details?"></textarea>
+
+          <p class="help">By submitting, your booking details will open in WhatsApp.</p>
+
+          <button type="submit" class="btn-primary">Book via WhatsApp</button>
+          <p id="statusMessage" class="status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
